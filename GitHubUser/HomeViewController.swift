@@ -31,7 +31,6 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         tableView.register(UINib(nibName: "userDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "userDetailCell")
         //self.createHardCodedDictionary()
         WebService.shareInstance.getUserList()
-        userDetails = modelUserDetails.mutableCopy() as! NSMutableArray
         tableView.separatorStyle = .none
         // Do any additional setup after loading the view.
     }
@@ -170,9 +169,18 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     
     @objc func getUserList(notification: Notification){
         if(notification.object != nil){
-            userDetails = (notification.object as! NSArray).mutableCopy() as! NSMutableArray
+            modelUserDetails = (notification.object as! NSArray).mutableCopy() as! NSMutableArray
+            print(modelUserDetails)
             let descriptor: NSSortDescriptor = NSSortDescriptor(key: "login", ascending: true)
             modelUserDetails = (modelUserDetails.sortedArray(using: [descriptor]) as NSArray).mutableCopy() as! NSMutableArray
+//           modelUserDetails = modelUserDetails.sort{
+//                (($0 as! NSDictionary)["login"] as? String) < (($1 as! NSDictionary)["login"] as? String)
+//            }
+            modelUserDetails = (modelUserDetails.sorted{
+                itemsSort(dictionary1: $0 as! NSDictionary, dictionary2: $1 as! NSDictionary)
+                } as NSArray).mutableCopy() as! NSMutableArray
+            print(modelUserDetails)
+            userDetails = modelUserDetails.mutableCopy() as! NSMutableArray
             tableView.reloadData()
         }else{
             let alertController = UIAlertController(title: "Error", message: "No User list Found", preferredStyle: .alert)
@@ -180,6 +188,13 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func itemsSort(dictionary1:NSDictionary, dictionary2:NSDictionary) -> Bool {
+        guard let s1 = dictionary1["login"] as? String, let s2 = dictionary2["login"] as? String else {
+            return false
+        }
+        return s1.lowercased() < s2.lowercased()
     }
     /*
     // MARK: - Navigation

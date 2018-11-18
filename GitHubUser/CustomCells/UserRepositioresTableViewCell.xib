@@ -29,16 +29,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI6-cT-RaH">
-                        <rect key="frame" x="10" y="50" width="97" height="18"/>
+                        <rect key="frame" x="10" y="50" width="87" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Description Description Description Description " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sZ-Fc-5yt">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description Description Description Description Description " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sZ-Fc-5yt">
                         <rect key="frame" x="120" y="48" width="190" height="36"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="190" id="2SC-4L-lZa"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -57,10 +54,10 @@
                     <constraint firstItem="4GJ-xm-cOi" firstAttribute="leading" secondItem="HR1-VN-NOz" secondAttribute="trailing" id="9TJ-Qw-Z0s"/>
                     <constraint firstItem="3sZ-Fc-5yt" firstAttribute="top" secondItem="zI6-cT-RaH" secondAttribute="bottom" constant="-20" id="DHp-Z7-GeG"/>
                     <constraint firstItem="zI6-cT-RaH" firstAttribute="top" secondItem="HR1-VN-NOz" secondAttribute="bottom" constant="15" id="FKP-J2-cCZ"/>
-                    <constraint firstAttribute="trailing" secondItem="3sZ-Fc-5yt" secondAttribute="trailing" constant="10" id="Y3Y-QF-ltb"/>
                     <constraint firstItem="zI6-cT-RaH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="YUy-eK-BYV"/>
                     <constraint firstAttribute="trailing" secondItem="4GJ-xm-cOi" secondAttribute="trailing" constant="10" id="ZaA-aY-IeX"/>
-                    <constraint firstItem="3sZ-Fc-5yt" firstAttribute="leading" secondItem="zI6-cT-RaH" secondAttribute="trailing" constant="13" id="f6F-Kk-BuV"/>
+                    <constraint firstAttribute="trailing" secondItem="3sZ-Fc-5yt" secondAttribute="trailing" constant="10" id="c52-86-N9X"/>
+                    <constraint firstItem="3sZ-Fc-5yt" firstAttribute="leading" secondItem="zI6-cT-RaH" secondAttribute="trailing" constant="23" id="f6F-Kk-BuV"/>
                     <constraint firstItem="HR1-VN-NOz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="q4m-t9-0wc"/>
                     <constraint firstItem="4GJ-xm-cOi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tfP-9p-pgw"/>
                     <constraint firstItem="HR1-VN-NOz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="zqW-J3-PbL"/>

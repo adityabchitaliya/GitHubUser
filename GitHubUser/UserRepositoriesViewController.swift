@@ -38,7 +38,7 @@ class UserRepositoriesViewController: UIViewController,UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UserRepositioresTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "UserRepositioresCell") as! UserRepositioresTableViewCell
         cell.LBLRepoName.text = (userRepositiories.object(at: indexPath.row) as! NSDictionary).value(forKey: "name") as? String
-        cell.LBLRepoDescription.text = (userRepositiories.object(at: indexPath.row) as! NSDictionary).value(forKey: "description") as? String
+        cell.LBLRepoDescription.text = (userRepositiories.object(at: indexPath.row) as! NSDictionary).value(forKey: "description") as? String ?? "No Description"
         return cell
     }
     

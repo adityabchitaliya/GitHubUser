@@ -23,7 +23,7 @@ class WebService: NSObject{
     }
     
     func getUsersRepositories(_ userName: String){
-        let url : String = self.getServerAddress() + userName
+        let url : String = self.getServerAddress() + "/" + userName + "/repos"
         let request : NSMutableURLRequest = NSMutableURLRequest()
         request.url = NSURL(string: url)! as URL
         request.httpMethod = "GET"
